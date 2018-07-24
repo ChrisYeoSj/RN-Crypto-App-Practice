@@ -1,7 +1,7 @@
 import react from 'react';
-import {View, Text, StyleSheet, image} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
-import {images} from '../Utils/CoinIcons';
+import {coinImages} from '../Utils/CoinImages';
 
 const styles=StyleSheet.create({
   container:{
@@ -23,7 +23,7 @@ const CoinCard = ({symbol, coin_name, price_usd, percent_change_24h, percent_cha
     <View style={container}>
       <Image
         style={styles.image}
-        source={{uri:images[symbol]}}
+        source={{uri:coinImages[symbol]}}
       />
       <Text>{symbol}</Text>
       <Text>{coin_name}</Text>

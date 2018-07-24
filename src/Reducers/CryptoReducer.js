@@ -1,3 +1,10 @@
+import {
+  FETCHING_COIN_DATA,
+  FETCHING_COIN_DATA_SUCCESS,
+  FETCHING_COIN_DATA_FAIL,
+} from '../Actions/ActionTypes';
+
+
 const initialState ={
   isFetching: null,
   data: [],

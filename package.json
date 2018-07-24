@@ -1,5 +1,5 @@
 {
-  "name": "react-native-redux-crypto-tracker",
+  "name": "RN-Crypto-App-Practice",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -15,8 +15,7 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest",
-    "postinstall": "remotedev-debugger-hostname localhost-port 5678-injectserver"
+    "test": "jest"
   },
   "remotedev": {
     "hostname": "localhost",
@@ -28,7 +27,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "16.3.1",
-    "react-native": "~0.55.2",
+    "react-native": "0.55.2",
     "react-native-loading-spinner-overlay": "^0.5.2",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

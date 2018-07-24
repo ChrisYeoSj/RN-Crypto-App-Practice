@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ScrollView} from 'react-native';
+import { View, Text, ScrollView, StyleSheet} from 'react-native';
 import CoinCard from './CoinCard';
-import FetchCoinData from '../../Actions/FetchCoinData';
+import FetchCoinData from '../Actions/FetchCoinData';
 
 import Spinner from 'react-native-loading-spinner-overlay';
 
@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
     paddingTop: 55,
   }
 })
+
+const {contentContainer} = styles;
 
 class CryptoContainer extends Component{
 
@@ -29,6 +31,7 @@ class CryptoContainer extends Component{
         price_usd={coin.price_usd}
         percent_change_24h={coin.percent_change_24h}
         percent_change_7d={coin.percent_change_7d}
+      />
     })
   }
 
@@ -38,7 +41,7 @@ class CryptoContainer extends Component{
     if(crypto.isFetching){
       return (<View>
                   <Spinner
-                      visible={crpyto.isFetching}
+                      visible={crypto.isFetching}
                       textContent={'Loading..'}
                       textStyle={{color: '#253145'}}
                       animation='fade'
@@ -49,7 +52,7 @@ class CryptoContainer extends Component{
 
     return (
       <ScrollView contentContainerStyle={contentContainer}>
-          {_renderCoinCards()}
+          {this._renderCoinCards()}
       </ScrollView>
     )
   }
