@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ScrollView, StyleSheet} from 'react-native';
+import { View, Text, ScrollView, StyleSheet, FlatList} from 'react-native';
 import CoinCard from './CoinCard';
 import FetchCoinData from '../Actions/FetchCoinData';
 
@@ -8,8 +8,8 @@ import Spinner from 'react-native-loading-spinner-overlay';
 
 const styles = StyleSheet.create({
   contentContainer: {
-    paddingBottom:100,
-    paddingTop: 55,
+    display: 'flex',
+    flex: 1,
   }
 })
 
@@ -23,16 +23,21 @@ class CryptoContainer extends Component{
 
   _renderCoinCards(){
     const {crypto} = this.props;
-    return crypto.data.map((coin, index) => {
-      <CoinCard
-        key={index}
-        coin_name={coin.name}
-        symbol={coin.symbol}
-        price_usd={coin.price_usd}
-        percent_change_24h={coin.percent_change_24h}
-        percent_change_7d={coin.percent_change_7d}
+    return (
+      <FlatList
+          data={crypto.data}
+          renderItem={(coin)=>{
+            return (<CoinCard
+              coin_name={coin.item.name}
+              symbol={coin.item.symbol}
+              price_usd={coin.item.price_usd}
+              percent_change_24h={coin.item.percent_change_24h}
+              percent_change_7d={coin.item.percent_change_7d}
+            />)
+          }}
+          keyExtractor={(item, index) => item.id}
       />
-    })
+    )
   }
 
   render(){

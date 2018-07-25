@@ -6,6 +6,8 @@
 # dependencies
 /node_modules
 /android/app/build
+/android/.idea/
+/android/build
 
 # misc
 .env.local
@@ -16,3 +18,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+android/.gradle/
+
+android/app/app\.iml

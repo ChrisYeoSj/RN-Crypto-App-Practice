@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
 import {coinImages} from '../Utils/CoinImages';
@@ -6,6 +6,8 @@ import {coinImages} from '../Utils/CoinImages';
 const styles=StyleSheet.create({
   container:{
     display:'flex',
+    flex: 1,
+    flexDirection: 'column',
   },
   image:{
     width: 40,
