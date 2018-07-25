@@ -27,6 +27,7 @@ class CryptoContainer extends Component{
       <FlatList
           data={crypto.data}
           renderItem={(coin)=>{
+            console.log(coin.item)
             return (<CoinCard
               coin_name={coin.item.name}
               symbol={coin.item.symbol}
